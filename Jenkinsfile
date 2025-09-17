@@ -51,16 +51,17 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            mail to: 'alex.baitann19@gmail.com',
+                 subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Build succeeded.\nSee: ${env.BUILD_URL}"
+        }
+        failure {
+            mail to: 'alex.baitann19@gmail.com',
+                 subject: "❌ FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Build failed.\nConsole: ${env.BUILD_URL}console"
+        }
+    }
 }
-post {
-    success {
-      mail to: 'alex.baitann19@gmail.com',
-           subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-           body: "Build succeeded.\nSee: ${env.BUILD_URL}"
-    }
-    failure {
-      mail to: 'alex.baitann19@gmail.com',
-           subject: "❌ FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-           body: "Build failed.\nConsole: ${env.BUILD_URL}console"
-    }
-  }
