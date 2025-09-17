@@ -29,7 +29,7 @@ pipeline {
                         -Dsonar.projectKey=HelloWorldTest \
                         -Dsonar.projectName="HelloWorldTest" \
                         -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.token=sqp_e3b10e2dab8cced92b698b781f8eea244da9220b
+                        -Dsonar.token=squ_d2aca18bb19dcda4522983a60e53e846baad22e4
                 '''
             }
         }
@@ -54,12 +54,12 @@ pipeline {
 }
 post {
     success {
-      mail to: 'craig@creativeagilepartners.co.uk',
+      mail to: 'alex.baitann19@gmail.com',
            subject: "✅ SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
            body: "Build succeeded.\nSee: ${env.BUILD_URL}"
     }
     failure {
-      mail to: 'craig@creativeagilepartners.co.uk',
+      mail to: 'alex.baitann19@gmail.com',
            subject: "❌ FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
            body: "Build failed.\nConsole: ${env.BUILD_URL}console"
     }
