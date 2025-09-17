@@ -1,0 +1,16 @@
+<project>
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.nobleprog.integration</groupId>
+<artifactId>HelloWorld</artifactId>
+<version>0.0.1</version>
+<properties>
+     <maven.compiler.source>17 </maven.compiler.source>
+     <maven.compiler.target>17</maven.compiler.target>
+</properties>
+<build>
+      <sourceDirectory>src</sourceDirectory>
+</build>
+<packaging>jar</packaging>
+<name>My Integration Test</name>
+</project>
+
